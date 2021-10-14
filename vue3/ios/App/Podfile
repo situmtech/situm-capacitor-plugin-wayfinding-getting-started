@@ -10,7 +10,7 @@ def capacitor_pods
   pod 'Capacitor', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorCordova', :path => '../../node_modules/@capacitor/ios'
   pod 'CapacitorCommunityCapacitorGooglemapsNative', :path => '../../node_modules/@capacitor-community/capacitor-googlemaps-native'
-  pod 'SitumCapacitorPluginWayfinding', :path => '../../../../situm-capacitor-plugin-wayfinding'
+  pod 'SitumCapacitorPluginWayfinding', :path => '../../node_modules/situm-capacitor-plugin-wayfinding'
 end
 
 target 'App' do

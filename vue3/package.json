@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@capacitor-community/capacitor-googlemaps-native": "git+https://github.com/situmtech/capacitor-google-maps.git#situm-alpha.0",
-    "situm-capacitor-plugin-wayfinding": "file:../../situm-capacitor-plugin-wayfinding",
+    "situm-capacitor-plugin-wayfinding": "git+https://github.com/situmtech/situm-capacitor-plugin-wayfinding.git",
     "@capacitor/android": "^3.0.1",
     "@capacitor/cli": "^3.0.1",
     "@capacitor/core": "^3.0.1",
