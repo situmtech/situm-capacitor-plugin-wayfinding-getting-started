@@ -27,7 +27,8 @@ Before running this application you must set up an account in our [Dashboard](ht
 2. Go to the [account section](https://dashboard.situm.com/accounts/profile) and on the bottom, click on “generate one” to generate your API KEY.
 3. Go to the [buildings section](http://dashboard.situm.com/buildings) and create your first building.
 4. Download Situm Mapping Tool in Play Store (Only Android devices) and calibrate your building. Check out [our user guide](https://situm.com/docs/03-calibration/) for detailed information.
-5. Put your Situm user name, API KEY and building ID in the `LibrarySettings` object of this example app:
+5. Open your UI Framework main app file. Right now, there is only a vue3 example and you can find the vue file at /vue3/src/App.vue.
+6. Put your Situm user name, API KEY and building ID in the `LibrarySettings` object of this example app:
 ```typescript
 const librarySettings = {
           user: "[YOUR_SITUM_USER]"
