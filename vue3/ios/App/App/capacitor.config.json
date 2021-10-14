@@ -1,0 +1,7 @@
+{
+	"appId": "com.example.app",
+	"appName": "Vue 3",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "dist"
+}
