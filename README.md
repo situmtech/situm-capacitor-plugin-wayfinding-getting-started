@@ -70,6 +70,13 @@ allprojects {
         ...
 ```
 
+If you are targeting Android Pie devices (or above), add Apache Http Legacy to your `AndroidManifest.xml`:
+```xml
+<uses-library
+  android:name="org.apache.http.legacy"
+  android:required="false"/>
+```
+
 ## How to Run
 
 1. Change into the UI Framework directory of choice (right now, only vue3), then run `npm install`.
