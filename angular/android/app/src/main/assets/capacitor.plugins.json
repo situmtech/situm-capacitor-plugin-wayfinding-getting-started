@@ -1,0 +1,10 @@
+[
+	{
+		"pkg": "@capacitor-community/capacitor-googlemaps-native",
+		"classpath": "com.hemangkumar.capacitorgooglemaps.CapacitorGoogleMaps"
+	},
+	{
+		"pkg": "situm-capacitor-plugin-wayfinding",
+		"classpath": "es.situm.wayfinding.capacitor.CapSitumWayfindingPlugin"
+	}
+]
