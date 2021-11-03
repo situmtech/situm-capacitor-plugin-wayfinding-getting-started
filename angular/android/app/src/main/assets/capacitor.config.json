@@ -1,0 +1,6 @@
+{
+	"appId": "com.example.app",
+	"appName": "WYF Angular",
+	"webDir": "dist/angular",
+	"bundledWebRuntime": false
+}

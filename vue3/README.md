@@ -1,29 +1,18 @@
-# Vue 3
+# Requirements:
 
-## Project setup
+## VueJS
 
-```
-npm install
-```
+This project uses [VueJS](https://v3.vuejs.org) version 3.
+See [Vue 3 documentation](https://v3.vuejs.org/guide/introduction.html) to get information about setting up your development environment.
 
-### Compiles and hot-reloads for development
+## Capacitor
 
-```
-npm run serve
-```
+See [Capacitor documentation](https://capacitorjs.com/solution/vue) to get information about installing capacitor in your Vue 3 project.
 
-### Compiles and minifies for production
+# Build
 
-```
-npm run build
-```
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npx cap sync` to keep the native layer up to date.
+You can simply run `npm run nativize` as a shortcut of these two commands.
 
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Finally open your android/iOS platform project and run.

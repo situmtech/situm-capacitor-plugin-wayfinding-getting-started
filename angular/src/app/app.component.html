@@ -1,0 +1,12 @@
+<div id="body">
+  <div class="col">
+    <div id="myHeader" (click)="webClick('header')"><p>Some kind of header</p></div>
+    <div id="situm-map" style="background: #9cd3a3" (click)="startMap('situm-map')">
+      <div id="mapOverlay" (click)="webClick('map overlay'); grow();"><p>HTML over native map</p></div>
+    </div>
+    <div id="myFooter" (click)="webClick('footer')">
+      <p id="myLog">Some kind of footer</p>
+      <button (click)="unload()">Unload</button>
+    </div>
+  </div>
+</div>

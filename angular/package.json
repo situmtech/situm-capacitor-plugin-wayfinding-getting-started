@@ -1,0 +1,48 @@
+{
+  "name": "angular",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "nativize": "ng build && npx cap sync"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~12.2.0",
+    "@angular/common": "~12.2.0",
+    "@angular/compiler": "~12.2.0",
+    "@angular/core": "~12.2.0",
+    "@angular/forms": "~12.2.0",
+    "@angular/platform-browser": "~12.2.0",
+    "@angular/platform-browser-dynamic": "~12.2.0",
+    "@angular/router": "~12.2.0",
+    "@capacitor-community/capacitor-googlemaps-native": "git+https://github.com/situmtech/capacitor-google-maps.git#situm-alpha.0",
+    "@capacitor/android": "^3.2.5",
+    "@capacitor/angular": "^1.0.3",
+    "@capacitor/core": "latest",
+    "@capacitor/ios": "^3.2.5",
+    "rxjs": "~6.6.0",
+    "situm-capacitor-plugin-wayfinding": "git+https://github.com/situmtech/situm-capacitor-plugin-wayfinding.git#v0.0.2",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~12.2.12",
+    "@angular/cli": "~12.2.12",
+    "@angular/compiler-cli": "~12.2.0",
+    "@types/jasmine": "~3.8.0",
+    "@types/node": "^12.11.1",
+    "jasmine-core": "~3.8.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "~1.7.0",
+    "typescript": "~4.3.5",
+    "@capacitor/cli": "latest",
+    "@types/resize-observer-browser": "^0.1.6"
+  }
+}
