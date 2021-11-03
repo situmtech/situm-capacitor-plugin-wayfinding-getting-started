@@ -27,8 +27,8 @@ Before running this application you must set up an account in our [Dashboard](ht
 2. Go to the [account section](https://dashboard.situm.com/accounts/profile) and on the bottom, click on “generate one” to generate your API KEY.
 3. Go to the [buildings section](http://dashboard.situm.com/buildings) and create your first building.
 4. Download Situm Mapping Tool in Play Store (Only Android devices) and calibrate your building. Check out [our user guide](https://situm.com/docs/03-calibration/) for detailed information.
-5. Open your UI Framework main app file. Right now, there is only a vue3 example and you can find the vue file at /vue3/src/App.vue.
-6. Put your Situm user name, API KEY and building ID in the `LibrarySettings` object of this example app:
+5. Open your UI Framework main app file: `/vue3/src/App.vue` for vue3 and `angular/src/app/app.component.ts` for angular.
+7. Put your Situm user name, API KEY and building ID in the `LibrarySettings` object of this example app:
 ```typescript
 const librarySettings = {
           user: "[YOUR_SITUM_USER]"
@@ -80,7 +80,7 @@ If you are targeting Android Pie devices (or above), add Apache Http Legacy to y
 
 ## How to Run
 
-1. Change into the UI Framework directory of choice (right now, only vue3), then run `npm install`.
+1. Change into the UI Framework directory of choice (right now, vue3 and angular), then run `npm install`.
 2. Build the web app: `npm run build`.
 3. Copy the built web app into the native platform: `npx cap sync`.
 4. Open the native IDE and run the app: `npx cap open [android/ios]` (or run with `npx cap run [android/ios]`).
