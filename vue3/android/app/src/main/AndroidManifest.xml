@@ -43,8 +43,9 @@
                 android:resource="@xml/file_paths"></meta-data>
         </provider>
 
+        <!-- YOUR_ANDROID_GOOGLE_MAPS_APIKEY -->
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="[YOUR_GOOGLE_MAPS_API_KEY]"/>
+            android:value="YOUR_GOOGLE_MAPS_API_KEY"/>
 
         <uses-library
             android:name="org.apache.http.legacy"

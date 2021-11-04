@@ -45,10 +45,10 @@ export default {
       try {
         // LibrarySettings:
         const librarySettings = {
-          user: "[YOUR_SITUM_USER]",
-          apiKey: "[YOUR_SITUM_APIKEY]",
-          iosGoogleMapsApiKey: "[YOUR_IOS_GOOGLE_MAPS_APIKEY]",
-          buildingId : "[YOUR_BUILDING_ID]",
+          user: "YOUR_SITUM_USER",
+          apiKey: "YOUR_SITUM_APIKEY",
+          iosGoogleMapsApiKey: "YOUR_IOS_GOOGLE_MAPS_APIKEY",
+          buildingId : "YOUR_BUILDING_ID",
           dashboardUrl: "https://dashboard.situm.com",
           hasSearchView: true,
           searchViewPlaceholder: "Capacitor WYF",

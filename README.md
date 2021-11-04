@@ -31,9 +31,9 @@ Before running this application you must set up an account in our [Dashboard](ht
 7. Put your Situm user name, API KEY and building ID in the `LibrarySettings` object of this example app:
 ```typescript
 const librarySettings = {
-          user: "[YOUR_SITUM_USER]"
-          apiKey: "[YOUR_SITUM_APIKEY]",
-          buildingId: "[YOUR_BUILDING_ID]",
+          user: "YOUR_SITUM_USER"
+          apiKey: "YOUR_SITUM_APIKEY",
+          buildingId: "YOUR_BUILDING_ID",
           ...
         };
 ```
@@ -49,14 +49,14 @@ Make sure to enable your API KEY for the platforms of your choice.
 ```typescript
 const librarySettings = {
           ...
-          iosGoogleMapsApiKey: "[YOUR_IOS_GOOGLE_MAPS_APIKEY]",
+          iosGoogleMapsApiKey: "YOUR_IOS_GOOGLE_MAPS_APIKEY",
           ...
         };
 ```
 2. Android: put your API KEY in `AndroidManifest.xml`. You will find this file in the `android/src/main` folder of your project.
 ```xml
 <meta-data android:name="com.google.android.geo.API_KEY"
-    android:value="[YOUR_ANDROID_GOOGLE_MAPS_APIKEY]"/>
+    android:value="YOUR_ANDROID_GOOGLE_MAPS_APIKEY"/>
 ```
 
 ### Dependencies
@@ -83,4 +83,4 @@ If you are targeting Android Pie devices (or above), add Apache Http Legacy to y
 1. Change into the UI Framework directory of choice (right now, vue3 and angular), then run `npm install`.
 2. Build the web app: `npm run build`.
 3. Copy the built web app into the native platform: `npx cap sync`.
-4. Open the native IDE and run the app: `npx cap open [android/ios]` (or run with `npx cap run [android/ios]`).
+4. Open the native IDE and run the app: `npx cap open android/ios` (or run with `npx cap run android/ios`).
