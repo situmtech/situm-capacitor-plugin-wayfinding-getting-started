@@ -84,3 +84,40 @@ If you are targeting Android Pie devices (or above), add Apache Http Legacy to y
 2. Build the web app: `npm run build`.
 3. Copy the built web app into the native platform: `npx cap sync`.
 4. Open the native IDE and run the app: `npx cap open android/ios` (or run with `npx cap run android/ios`).
+
+## Troubleshooting
+
+* Check your current `node` and `npm` versions:
+  ```
+    $ node -v
+    vX.Y.X
+    $ npm -v
+    A.B.C
+  ```
+  Update them if necessary. We recommend using a __node version manager__ such us:
+
+  * Linux and MacOS: [nvm](https://github.com/nvm-sh/nvm).
+  * Windows: [NVS](https://github.com/jasongin/nvs) or [nvm-windows](https://github.com/coreybutler/nvm-windows).
+
+* `npm` may produce an error installing the [Capacitor Google Maps](https://github.com/situmtech/capacitor-google-maps.git#situm-alpha.0) dependency. If so, install it manually first and finally complete the dependency tree executing:
+  ```
+  $ npm install https://github.com/situmtech/capacitor-google-maps.git#situm-alpha.0
+  $ npm install
+  ```
+
+* For Android developers we assume that Android Studio is installed. If not, install it.
+  Check your environmment variable `JAVA_HOME`, make sure it points to the `jre` bundled with your Android Studio installation.
+
+  * Linux and MacOS:
+  ```
+    export JAVA_HOME=/your/path/to/android/studio/jre
+  ```
+  Add the previous line to your `.bashrc` if you want to keep its value between sessions.
+  * Windows:
+  ```
+    set JAVA_HOME=C:\your\path\to\android\studio\jre
+  ```
+  Again, add the `JAVA_HOME` variable to your environment variables if you want to keep its value between sessions.
+
+
+* We assume you have [git](https://git-scm.com/) installed on your system. If not, install it.
