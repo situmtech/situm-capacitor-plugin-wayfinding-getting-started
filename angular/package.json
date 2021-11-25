@@ -25,7 +25,7 @@
     "@capacitor/core": "latest",
     "@capacitor/ios": "^3.2.5",
     "rxjs": "~6.6.0",
-    "situm-capacitor-plugin-wayfinding": "github:situmtech/situm-capacitor-plugin-wayfinding#v0.0.3",
+    "situm-capacitor-plugin-wayfinding": "github:situmtech/situm-capacitor-plugin-wayfinding#feature/PRO-1805-user-marker-icons",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

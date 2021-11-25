@@ -53,6 +53,8 @@ export default {
           hasSearchView: true,
           searchViewPlaceholder: "Capacitor WYF",
           useDashboardTheme: false,
+          userPositionIcon: "public/situm_position.png",
+          userPositionArrowIcon: "public/situm_pose.png"
         };
         console.log(`ATAG: will call now SitumWayfinding#load(${JSON.stringify(librarySettings)})`)
         const wyfResponse = await SitumWayfinding.load(element, librarySettings);

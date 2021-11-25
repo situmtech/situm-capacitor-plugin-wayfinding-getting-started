@@ -23,7 +23,7 @@
     "@capacitor/core": "^3.0.1",
     "@capacitor/ios": "^3.1.2",
     "core-js": "^3.6.5",
-    "situm-capacitor-plugin-wayfinding": "github:situmtech/situm-capacitor-plugin-wayfinding#v0.0.3",
+    "situm-capacitor-plugin-wayfinding": "github:situmtech/situm-capacitor-plugin-wayfinding#feature/PRO-1805-user-marker-icons",
     "typescript": "^4.4.3",
     "vue": "^3.0.0"
   },
