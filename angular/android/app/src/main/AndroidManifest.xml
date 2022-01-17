@@ -12,6 +12,7 @@
 
     <activity
       android:name="com.example.app.MainActivity"
+      android:exported="true"
       android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
       android:screenOrientation="portrait"
       android:windowSoftInputMode="adjustPan"
