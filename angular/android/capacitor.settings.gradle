@@ -6,4 +6,4 @@ include ':capacitor-community-capacitor-googlemaps-native'
 project(':capacitor-community-capacitor-googlemaps-native').projectDir = new File('../node_modules/@capacitor-community/capacitor-googlemaps-native/android')
 
 include ':situm-capacitor-plugin-wayfinding'
-project(':situm-capacitor-plugin-wayfinding').projectDir = new File('../../../situm/situm-capacitor-plugin-wayfinding/android')
+project(':situm-capacitor-plugin-wayfinding').projectDir = new File('../node_modules/situm-capacitor-plugin-wayfinding/android')
