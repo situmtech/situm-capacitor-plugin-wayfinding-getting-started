@@ -1,12 +1,28 @@
 <div id="body">
   <div class="col">
-    <div id="myHeader" (click)="webClick('header')"><p>Some kind of header</p></div>
+    <div id="myHeader">
+      <p>Some kind of header</p>
+      <select name="autostart-select" (change)="onAutostartModeChanged($event.target)">
+        <option value="centerPoi">On start: select POI.</option>
+        <option value="navToPoi">On start: nav to POI</option>
+        <option value="navToLocation">On start: nav to Location</option>
+      </select>
+      <button (click)="centerPoi()">Center Poi</button>
+      <button (click)="centerBuilding()">Center Building</button>
+      <button (click)="navToPoi()">Nav to POI</button>
+      <button (click)="navToLocation()">Nav to location</button>
+      <button (click)="stopPositioning()">Stop Positioning</button>
+    </div>
     <div id="situm-map" style="background: #9cd3a3" (click)="startMap('situm-map')">
       <div id="mapOverlay" (click)="webClick('map overlay'); grow();"><p>HTML over native map</p></div>
     </div>
-    <div id="myFooter" (click)="webClick('footer')">
+    <div id="myFooter">
       <p id="myLog">Some kind of footer</p>
       <button (click)="unload()">Unload</button>
+      <button (click)="toggleOuterHTML()">Switch Outer HTML</button>
+      <button (click)="switchCaptureEvents()">Switch Capture Events</button>
     </div>
+  </div>
+  <div id="outerHTML" class="out" (click)="webClick('Outer HTML')">
   </div>
 </div>

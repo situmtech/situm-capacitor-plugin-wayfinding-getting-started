@@ -45,3 +45,22 @@ transition:all 0.8s ease;
 height: 120px;
 width: 200px;
 }
+
+#outerHTML {
+  background: #c6dca0;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+#outerHTML.in {
+display: block;
+position: absolute;
+width: 80%;
+height: 80%;
+top: 10%;
+left: 10%;
+}
+
+#outerHTML.out {
+  display: none;
+}
