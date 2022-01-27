@@ -40,7 +40,7 @@
     <!-- YOUR_ANDROID_GOOGLE_MAPS_APIKEY -->
     <meta-data
       android:name="com.google.android.geo.API_KEY"
-      android:value="YOUR_ANDROID_GOOGLE_MAPS_APIKEY" />
+      android:value="---" />
 
     <uses-library
       android:name="org.apache.http.legacy"
