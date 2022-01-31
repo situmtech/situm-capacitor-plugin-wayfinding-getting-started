@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SitumWayfinding } from 'situm-capacitor-plugin-wayfinding';
+import Constants from '../app.constants.json';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,6 @@ import { SitumWayfinding } from 'situm-capacitor-plugin-wayfinding';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular';
-  maps: any = {};
 
   async startMap(targetId: string) {
     const element: HTMLElement | null = document.getElementById(targetId);
@@ -16,24 +15,15 @@ export class AppComponent {
       return;
     }
 
-    // if map already (being) initialized, avoid a new map being initialized
-    if (this.maps[element.id] != undefined) {
-      return;
-    }
-    
-    // prevent race condition, where firing `startMap` quickly after one another, starts up multiple maps
-    this.maps[element.id] = {};
-    console.log("Now maps looks like this: " + JSON.stringify(this.maps));
-
     // finally create the map
     console.log('ATAG: Will try now to create the map');
     try {
       // LibrarySettings:
       const librarySettings = {
-        user: "YOUR_SITUM_USER",
-        apiKey: "YOUR_SITUM_APIKEY",
-        iosGoogleMapsApiKey: "YOUR_IOS_GOOGLE_MAPS_APIKEY",
-        buildingId : "YOUR_BUILDING_ID",
+        user: Constants.credentials.situmUser,
+        apiKey: Constants.credentials.situmKey,
+        iosGoogleMapsApiKey: Constants.credentials.googleMapsApiKeyIOS,
+        buildingId : Constants.buildingId,
         dashboardUrl: "https://dashboard.situm.com",
         hasSearchView: true,
         searchViewPlaceholder: "Capacitor WYF",
@@ -48,12 +38,11 @@ export class AppComponent {
       console.log('ATAG: // ERROR:');
       console.log(`ATAG: ${e}`);
       console.log('ATAG: // END ERROR.');
-      this.maps[element.id] = null;
     }
   }
 
   async unload() {
-    SitumWayfinding.unload();
+    await SitumWayfinding.unload();
   }
 
   async webClick(elementName: string) {
