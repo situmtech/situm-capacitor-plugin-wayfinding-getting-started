@@ -27,16 +27,17 @@ Before running this application you must set up an account in our [Dashboard](ht
 2. Go to the [account section](https://dashboard.situm.com/accounts/profile) and on the bottom, click on “generate one” to generate your API KEY.
 3. Go to the [buildings section](http://dashboard.situm.com/buildings) and create your first building.
 4. Download Situm Mapping Tool in Play Store (Only Android devices) and calibrate your building. Check out [our user guide](https://situm.com/docs/03-calibration/) for detailed information.
-5. Open your UI Framework main app file: `/vue3/src/App.vue` for vue3 and `angular/src/app/app.component.ts` for angular.
-7. Put your Situm user name, API KEY and building ID in the `LibrarySettings` object of this example app:
+5. Locate the main app file in the UI Framework of your choice: `/vue3/src/App.vue` for vue3 and `angular/src/app/app.component.ts` for angular. Your Situm user name, API KEY and building ID must be set in the `LibrarySettings` object of this example app:
 ```typescript
 const librarySettings = {
-          user: "YOUR_SITUM_USER"
+          user: "YOUR_SITUM_USER",
           apiKey: "YOUR_SITUM_APIKEY",
           buildingId: "YOUR_BUILDING_ID",
           ...
         };
 ```
+6. For your convenience, we have added for both Angular and Vue the file `app.constants.json` where you can establish this data. This file is imported from the main app file and used to fill the `LibrarySettings` object.
+
 See [Situm Wayfinding Module for Capacitor](https://github.com/situmtech/situm-capacitor-plugin-wayfinding) for more detailed information on the `LibrarySettings`.
 
 ### Setup your Google Maps API KEY:
@@ -45,7 +46,7 @@ A Google Maps API KEY is required to run this example app.
 More info is available in the official [Google Documentation](https://developers.google.com/maps/documentation/android-sdk/get-api-key).
 Make sure to enable your API KEY for the platforms of your choice.
 
-1. iOS: put your API KEY in the `LibrarySettings` object of this example app.
+1. iOS: put your API KEY in the `LibrarySettings` object of this example app (or `app.constants.json`).
 ```typescript
 const librarySettings = {
           ...
