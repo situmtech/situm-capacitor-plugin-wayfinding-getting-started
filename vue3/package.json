@@ -23,7 +23,7 @@
     "@capacitor/core": "^3.0.1",
     "@capacitor/ios": "^3.1.2",
     "core-js": "^3.6.5",
-    "situm-capacitor-plugin-wayfinding": "^0.2.0",
+    "situm-capacitor-plugin-wayfinding": "^0.3.1",
     "typescript": "^4.4.3",
     "vue": "^3.0.0"
   },

@@ -25,7 +25,7 @@
     "@capacitor/core": "latest",
     "@capacitor/ios": "^3.2.5",
     "rxjs": "~6.6.0",
-    "situm-capacitor-plugin-wayfinding": "^0.2.0",
+    "situm-capacitor-plugin-wayfinding": "^0.3.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
