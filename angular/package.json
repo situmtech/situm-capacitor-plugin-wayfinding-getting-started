@@ -25,7 +25,7 @@
     "@capacitor/ios": "^3.2.5",
     "rxjs": "~6.6.0",
     "situm-capacitor-googlemaps-native": "latest",
-    "situm-capacitor-plugin-wayfinding": "github:situmtech/situm-capacitor-plugin-wayfinding#PRO-2064-test",
+    "situm-capacitor-plugin-wayfinding": "github:situmtech/situm-capacitor-plugin-wayfinding#PRO-2064-test-2",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
