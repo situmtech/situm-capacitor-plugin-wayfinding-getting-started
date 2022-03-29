@@ -23,7 +23,7 @@
     "@capacitor/angular": "^1.0.3",
     "@capacitor/core": "latest",
     "@capacitor/ios": "^3.2.5",
-    "rxjs": "~6.6.0",
+    "rxjs": "~6.6.7",
     "situm-capacitor-googlemaps-native": "0.0.3",
     "situm-capacitor-plugin-wayfinding": "github:situmtech/situm-capacitor-plugin-wayfinding#PRO-2064-test-4",
     "tslib": "^2.3.0",
