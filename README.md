@@ -17,6 +17,12 @@ Initial View               | SitumWayfinding Loaded     | Navigation
 :-------------------------:|:-------------------------: |:-------------------------:
 ![Initial View](images/wyf-pre-load.png?raw=true "Initial view")  |  ![SitumWayfinding Loaded](images/wyf-loaded.png?raw=true "SitumWayfindingLoaded") | ![Navigation](images/wyf-navigation.png?raw=true "Navigation")
 
+
+## Submitting Contributions
+
+You will need to sign a Contributor License Agreement (CLA) before making a submission. 
+[Learn more here.](https://situm.com/contributions/)
+
 ## Requirements
 
 ### Setup your Situm Account
