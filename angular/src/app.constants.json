@@ -1,8 +1,8 @@
 {
     "credentials": {
-        "situmUser": "bruno.gomez@dimensiona.com",
-        "situmKey": "20fd8f4348490660329227357d4c5ff03447d5ab1306416aa1ebc22c044f99de",
-        "googleMapsApiKeyIOS": "AIzaSyABCmKsC86JTGYSFJMg7ugTW0rFvI__QC0"
+        "situmUser": "YOUR_SITUM_USER",
+        "situmKey": "YOUR_SITUM_APIKEY",
+        "googleMapsApiKeyIOS": "YOUR_IOS_GOOGLE_MAPS_APIKEY"
     },
-    "buildingId": "10246"
+    "buildingId": "YOUR_BUILDING_ID"
 }
