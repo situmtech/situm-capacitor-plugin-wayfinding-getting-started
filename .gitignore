@@ -1,1 +1,3 @@
 .dangerous-files
+node_modules
+.angular
