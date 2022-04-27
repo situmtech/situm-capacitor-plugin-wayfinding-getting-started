@@ -1,5 +1,0 @@
-{
-  "dependencies": {
-    "situm-capacitor-plugin-wayfinding": "file:../situm-capacitor-plugin-wayfinding"
-  }
-}
