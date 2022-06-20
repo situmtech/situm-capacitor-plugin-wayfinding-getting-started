@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SitumWayfinding } from 'situm-capacitor-plugin-wayfinding';
+import {Building, SitumWayfinding} from 'situm-capacitor-plugin-wayfinding';
 import Constants from '../app.constants.json';
 
 @Component({
@@ -31,8 +31,11 @@ export class AppComponent {
       };
       console.log(`ATAG: will call now SitumWayfinding#load(${JSON.stringify(librarySettings)})`)
       const wyfResponse = await SitumWayfinding.load(element, librarySettings);
+
       console.log(`ATAG: call to load finished with result: ${JSON.stringify(wyfResponse)}`);
 
+      const building: Building = {id: Constants.buildingId}
+      await SitumWayfinding.lockCameraToBuilding(building)
     } catch (e) {
       alert('ATAG: Some kind of mysterious error just happened!!!');
       console.log('ATAG: // ERROR:');
