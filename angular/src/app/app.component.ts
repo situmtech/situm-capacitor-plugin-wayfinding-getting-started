@@ -28,9 +28,10 @@ export class AppComponent {
         hasSearchView: true,
         searchViewPlaceholder: "Capacitor WYF",
         useDashboardTheme: false,
+        lockCameraToBuilding: false
       };
       console.log(`ATAG: will call now SitumWayfinding#load(${JSON.stringify(librarySettings)})`)
-      const wyfResponse = await SitumWayfinding.load(element, librarySettings);
+      const wyfResponse = await SitumWayfinding.load(element, librarySettings, Constants.buildingId);
 
       console.log(`ATAG: call to load finished with result: ${JSON.stringify(wyfResponse)}`);
     } catch (e) {
