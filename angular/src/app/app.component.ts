@@ -33,9 +33,6 @@ export class AppComponent {
       const wyfResponse = await SitumWayfinding.load(element, librarySettings);
 
       console.log(`ATAG: call to load finished with result: ${JSON.stringify(wyfResponse)}`);
-
-      const building: Building = {id: Constants.buildingId}
-      await SitumWayfinding.lockCameraToBuilding(building)
     } catch (e) {
       alert('ATAG: Some kind of mysterious error just happened!!!');
       console.log('ATAG: // ERROR:');
