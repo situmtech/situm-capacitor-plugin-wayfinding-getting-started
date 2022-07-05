@@ -28,8 +28,8 @@ export class AppComponent {
         hasSearchView: true,
         searchViewPlaceholder: "Capacitor WYF",
         useDashboardTheme: false,
-        lockCameraToBuilding: false,
-        enablePoisClustering: false
+        lockCameraToBuilding: true,
+        enablePoiClustering: true
       };
       console.log(`ATAG: will call now SitumWayfinding#load(${JSON.stringify(librarySettings)})`)
       const wyfResponse = await SitumWayfinding.load(element, librarySettings);
