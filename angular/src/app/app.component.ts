@@ -28,11 +28,12 @@ export class AppComponent {
         hasSearchView: true,
         searchViewPlaceholder: "Capacitor WYF",
         useDashboardTheme: false,
+        lockCameraToBuilding: true,
+        enablePoiClustering: true
       };
       console.log(`ATAG: will call now SitumWayfinding#load(${JSON.stringify(librarySettings)})`)
       const wyfResponse = await SitumWayfinding.load(element, librarySettings);
       console.log(`ATAG: call to load finished with result: ${JSON.stringify(wyfResponse)}`);
-
     } catch (e) {
       alert('ATAG: Some kind of mysterious error just happened!!!');
       console.log('ATAG: // ERROR:');
