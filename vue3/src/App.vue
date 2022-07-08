@@ -45,7 +45,7 @@ export default {
           dashboardUrl: "https://dashboard.situm.com",
           hasSearchView: true,
           searchViewPlaceholder: "Capacitor WYF",
-          useDashboardTheme: false,
+          useDashboardTheme: false
         };
         console.log(`ATAG: will call now SitumWayfinding#load(${JSON.stringify(librarySettings)})`)
         const wyfResponse = await SitumWayfinding.load(element, librarySettings);
