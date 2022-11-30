@@ -1,0 +1,8 @@
+export class SitumConfig
+{
+    static readonly user = 'YOUR-SITUM-UER';
+    static readonly apiKey = 'YOUR-SITUM-API-KEY';
+    static readonly buildingId = 'YOUR-BUILDING-ID';
+    static readonly iosGoogleMapsApiKey = 'YOUR-GOOGLE-MAPS-API-KEY';
+    static readonly dashboardUrl = 'https://dashboard.situm.com';
+};

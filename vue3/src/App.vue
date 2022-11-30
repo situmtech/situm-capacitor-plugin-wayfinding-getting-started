@@ -15,6 +15,7 @@
 
 <script>
 import { SitumWayfinding } from 'situm-capacitor-plugin-wayfinding';
+import { SitumConfig } from 'situm.config';
 
 export default {
   name: 'App',
@@ -44,16 +45,16 @@ export default {
       console.log('ATAG: Will try now to create the map');
       try {
         // LibrarySettings:
-        const librarySettings = {
-          user: "YOUR_SITUM_USER",
-          apiKey: "YOUR_SITUM_APIKEY",
-          iosGoogleMapsApiKey: "YOUR_IOS_GOOGLE_MAPS_APIKEY",
-          buildingId : "YOUR_BUILDING_ID",
-          dashboardUrl: "https://dashboard.situm.com",
-          hasSearchView: true,
-          searchViewPlaceholder: "Capacitor WYF",
-          useDashboardTheme: false,
-        };
+      const librarySettings = {
+        user: SitumConfig.user,
+        apiKey: SitumConfig.apiKey,
+        iosGoogleMapsApiKey: SitumConfig.iosGoogleMapsApiKey,
+        buildingId : SitumConfig.buildingId,
+        dashboardUrl: SitumConfig.dashboardUrl,
+        hasSearchView: true,
+        searchViewPlaceholder: "Capacitor WYF",
+        useDashboardTheme: false,
+      };
         console.log(`ATAG: will call now SitumWayfinding#load(${JSON.stringify(librarySettings)})`)
         const wyfResponse = await SitumWayfinding.load(element, librarySettings);
         console.log(`ATAG: call to load finished with result: ${JSON.stringify(wyfResponse)}`);

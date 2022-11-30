@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SitumWayfinding } from 'situm-capacitor-plugin-wayfinding';
+import { SitumConfig } from 'src/situm.config';
 
 @Component({
   selector: 'app-root',
@@ -30,11 +31,11 @@ export class AppComponent {
     try {
       // LibrarySettings:
       const librarySettings = {
-        user: "YOUR_SITUM_USER",
-        apiKey: "YOUR_SITUM_APIKEY",
-        iosGoogleMapsApiKey: "YOUR_IOS_GOOGLE_MAPS_APIKEY",
-        buildingId : "YOUR_BUILDING_ID",
-        dashboardUrl: "https://dashboard.situm.com",
+        user: SitumConfig.user,
+        apiKey: SitumConfig.apiKey,
+        iosGoogleMapsApiKey: SitumConfig.iosGoogleMapsApiKey,
+        buildingId : SitumConfig.buildingId,
+        dashboardUrl: SitumConfig.dashboardUrl,
         hasSearchView: true,
         searchViewPlaceholder: "Capacitor WYF",
         useDashboardTheme: false,

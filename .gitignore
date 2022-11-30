@@ -1,0 +1,4 @@
+# Ignore credentials:
+situm.config.ts
+# Ignore debug folder:
+**/android/app/src/debug/
