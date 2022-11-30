@@ -1,3 +1,5 @@
-.dangerous-files
 node_modules
 .angular
+app.constants.json
+**/android/app/src/debug
+**/.idea
