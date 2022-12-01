@@ -106,12 +106,6 @@ If you are targeting Android Pie devices (or above), add Apache Http Legacy to y
   * Linux and MacOS: [nvm](https://github.com/nvm-sh/nvm).
   * Windows: [NVS](https://github.com/jasongin/nvs) or [nvm-windows](https://github.com/coreybutler/nvm-windows).
 
-* `npm` may produce an error installing the [Capacitor Google Maps](https://github.com/situmtech/capacitor-google-maps.git#situm-alpha.0) dependency. If so, install it manually first and finally complete the dependency tree executing:
-  ```
-  $ npm install https://github.com/situmtech/capacitor-google-maps.git#situm-alpha.0
-  $ npm install
-  ```
-
 * For Android developers we assume that Android Studio is installed. If not, install it.
   Check your environmment variable `JAVA_HOME`, make sure it points to the `jre` bundled with your Android Studio installation.
 
