@@ -1,8 +1,0 @@
-{
-    "credentials": {
-        "situmUser": "YOUR_SITUM_USER",
-        "situmKey": "YOUR_SITUM_APIKEY",
-        "googleMapsApiKeyIOS": "YOUR_IOS_GOOGLE_MAPS_APIKEY"
-    },
-    "buildingId": "YOUR_BUILDING_ID"
-}

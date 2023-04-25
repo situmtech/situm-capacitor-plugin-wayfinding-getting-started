@@ -33,7 +33,7 @@ Before running this application you must set up an account in our [Dashboard](ht
 2. Go to the [account section](https://dashboard.situm.com/accounts/profile) and on the bottom, click on “generate one” to generate your API KEY.
 3. Go to the [buildings section](http://dashboard.situm.com/buildings) and create your first building.
 4. Download Situm Mapping Tool in Play Store (Only Android devices) and calibrate your building. Check out [our user guide](https://situm.com/docs/03-calibration/) for detailed information.
-5. Locate the main app file in the UI Framework of your choice: `/vue3/src/App.vue` for vue3 and `angular/src/app/app.component.ts` for angular. Your Situm user name, API KEY and building ID must be set in the `LibrarySettings` object of this example app:
+5. Go to the main app file in the Angular Framework, it is in `angular/src/app/app.component.ts`. Your Situm user name, API KEY and building ID must be set in the `LibrarySettings` object of this example app:
 ```typescript
 const librarySettings = {
           user: "YOUR_SITUM_USER",
@@ -42,7 +42,7 @@ const librarySettings = {
           ...
         };
 ```
-6. For your convenience, we have added for both Angular and Vue the file `app.constants.json` where you can establish this data. This file is imported from the main app file and used to fill the `LibrarySettings` object.
+6. For your convenience, we have added the file `app.constants.json` where you can establish this data. This file is imported from the main app file and used to fill the `LibrarySettings` object.
 
 See [Situm Wayfinding Module for Capacitor](https://github.com/situmtech/situm-capacitor-plugin-wayfinding) for more detailed information on the `LibrarySettings`.
 
@@ -87,7 +87,7 @@ If you are targeting Android Pie devices (or above), add Apache Http Legacy to y
 
 ## How to Run
 
-1. Change into the UI Framework directory of choice (right now, vue3 and angular), then run `npm install`.
+1. Change into the Angular Framework directory, then run `npm install`.
 2. Build the web app: `npm run build`.
 3. Copy the built web app into the native platform: `npx cap sync`.
 4. Open the native IDE and run the app: `npx cap open android/ios` (or run with `npx cap run android/ios`).
