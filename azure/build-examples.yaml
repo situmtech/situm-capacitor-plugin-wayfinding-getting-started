@@ -87,9 +87,9 @@ steps:
       - bash: |
 
           if [[ "$(Build.Reason)" == "Manual" ]];then
-            folder="$(CordovaExample_folder)/Manual"
+            folder="$(CapacitorExample_folder)/Manual"
           else
-            folder="$(CordovaExample_folder)"
+            folder="$(CapacitorExample_folder)"
           fi
         
           branchName=$(echo $(Build.SourceBranch)| cut -d "/" -f 3,4 | sed 's/\//_/g')
@@ -103,7 +103,7 @@ steps:
           echo -e "\t[+] Destination folder: $folder/$branchFolder/$destinationFolder" 
           echo -e "\t[+] Plugin Version: $(pluginVersion)"
 
-          cd cordova-sdk-validation
+          cd situm-capacitor-plugin-wayfinding-getting-started
           echo -e "\n[+] Install $(office365Cli) cli\n"
   
           npm i -g $(office365Cli)
@@ -118,7 +118,7 @@ steps:
           m365 spo folder add -p $folder/$branchFolder -u $(SharepointUrl) --name $destinationFolder
   
           echo -e "\n[+] Upload APK to $folder/$branchFolder/$destinationFolder\n"
-          cd platforms/android/app/build/outputs/apk/debug/
+          cd android/app/build/outputs/apk/debug/
           mv app-debug.apk app-$(pluginVersion)-debug.apk
           m365 spo file add -p app-$(pluginVersion)-debug.apk -u $(SharepointUrl) -f $folder/$branchFolder/$destinationFolder
 
