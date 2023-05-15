@@ -46,10 +46,10 @@ platform :ios do
       configuration: "Debug",
       scheme: "App",
       export_method: "app-store",
-      xcargs: "CODE_SIGN_STYLE=Manual PROVISIONING_PROFILE_SPECIFIER=\"Situm Cordova SDK Example\" DEVELOPMENT_TEAM=\""+ENV['appleDevTeamId']+"\" CODE_SIGN_IDENTITY=\""+ENV["CODE_SIGN_IDENTITY"]+"\"",
+      xcargs: "CODE_SIGN_STYLE=Manual PROVISIONING_PROFILE_SPECIFIER=\"Situm Capacitory WYF Example\" DEVELOPMENT_TEAM=\""+ENV['appleDevTeamId']+"\" CODE_SIGN_IDENTITY=\""+ENV["CODE_SIGN_IDENTITY"]+"\"",
       export_options: {
           provisioningProfiles: {
-              "com.situm.cordovaexample" => "DistributorOnline"
+              "com.situm.capacitorexample" => "DistributorOnline"
             },
         }
     )

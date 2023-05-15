@@ -1,4 +1,4 @@
-package com.example.app;
+package com.situm.capacitorexample;
 
 import com.getcapacitor.BridgeActivity;
 
