@@ -30,17 +30,6 @@ steps:
           removeProfile: true
 
       - bash: |
-          echo -e "\n[+] Selecting the Xcode version $(xcodeVersion)\n"
-  
-          sudo xcode-select -switch $(xcodeVersion)
-  
-          cd situm-capacitor-plugin-wayfinding-getting-started
-          echo -e "\n[+] Add platform iOS\n"
-          npx cap add ios
-
-        displayName: Add platforms
-
-      - bash: |
 
           export appleDevTeamId=$(appleDevTeamId)
           export CODE_SIGN_IDENTITY="$(CODE_SIGN_IDENTITY)"
@@ -64,9 +53,9 @@ steps:
 
           echo -e "\n[+] Set up fastlane instructions"
           cd ..
-          cp -r fastlane platforms/ios/
+          cp -r fastlane angular/ios/
 
-          cd platforms/ios
+          cd angular/ios
           
           echo -e "\n[+] Build with fastlane\n"
           fastlane ios beta
