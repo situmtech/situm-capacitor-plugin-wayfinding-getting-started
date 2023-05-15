@@ -51,7 +51,7 @@ steps:
  
   - bash: |
 
-      npm -i $(npmVersion)
+      npm install -g $(npmVersion)
      
       cd situm-capacitor-plugin-wayfinding-getting-started/angular
 
