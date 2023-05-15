@@ -20,7 +20,7 @@ steps:
       - task: InstallAppleProvisioningProfile@1
         inputs:
           provisioningProfileLocation: 'secureFiles'
-          provProfileSecureFile: Situm_Cordova_SDK_Example.mobileprovision
+          provProfileSecureFile: Situm_Capacitor_WYF_Example.mobileprovision
           removeProfile: true
       
       - task: InstallAppleProvisioningProfile@1
