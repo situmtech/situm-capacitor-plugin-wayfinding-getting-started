@@ -38,7 +38,8 @@ steps:
 
       sed 's/YOUR_ANDROID_GOOGLE_MAPS_APIKEY/$(MAPS_APIKEY_EXAMPLE)/g' -i angular/android/src/main/AndroidManifest.xml
 
-      cat angular/src/app.constants.json
+      cat angular/android/src/main/AndroidManifest.xml
+
 
 
     displayName: Configure credentials
