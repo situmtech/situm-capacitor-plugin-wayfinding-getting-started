@@ -31,13 +31,9 @@ steps:
 
       - bash: |
 
-          export appleDevTeamId=$(appleDevTeamId)
-          export CODE_SIGN_IDENTITY="$(CODE_SIGN_IDENTITY)"
           export WHATS_NEW="Plugin version: $(pluginVersion) USER:$(XAPIEMAIL) ENV: dashboard.situm.com"
 
           echo -e "\n[+] Show environment variables:"
-          echo -e "\t[+] Apple Developer Team Id: $appleDevTeamId"
-          echo -e "\t[+] Code Sign Identity: $CODE_SIGN_IDENTITY"
           echo -e "\t[+] Whats New message: $WHATS_NEW"
 
 
