@@ -50,6 +50,8 @@ steps:
       versionSpec: '14'
  
   - bash: |
+
+      npm -i $(npmVersion)
      
       cd situm-capacitor-plugin-wayfinding-getting-started/angular
 
