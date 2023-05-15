@@ -36,6 +36,7 @@ steps:
       sed 's/YOUR_IOS_GOOGLE_MAPS_APIKEY/$(MAPS_APIKEY_EXAMPLE)/g' -i angular/src/app.constants.json
       sed 's/YOUR_BUILDING_ID/${{ parameters.BUILDINGID }}/g' -i angular/src/app.constants.json
 
+      sed 's/YOUR_ANDROID_GOOGLE_MAPS_APIKEY/$(MAPS_APIKEY_EXAMPLE)/g' -i angular/android/src/main/AndroidManifest.xml
 
       cat angular/src/app.constants.json
 
