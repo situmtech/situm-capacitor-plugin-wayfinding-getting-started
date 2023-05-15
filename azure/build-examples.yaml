@@ -77,16 +77,11 @@ steps:
 
     - ${{ if contains(parameters.system, 'ubuntu') }}:
       - bash: |
-          cd situm-capacitor-plugin-wayfinding-getting-started
-          echo -e "\n[+] Add platform Android\n"
-          npx cap add android
+          cd situm-capacitor-plugin-wayfinding-getting-started/angular/android
 
-        displayName: Add platforms
+          echo -e "\n[+] Build Android project\n"
+          ./gradlew assembleDebug
 
-      - bash: |
-          cd cordova-sdk-validation
-          echo -e "\n[+] Add platform Android\n"
-          npx cap open android
         displayName: Build Android App
 
       - bash: |

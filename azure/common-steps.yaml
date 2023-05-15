@@ -51,8 +51,6 @@ steps:
  
   - bash: |
 
-      npm install -g $(npmVersion)
-     
       cd situm-capacitor-plugin-wayfinding-getting-started/angular
 
       echo -e "\n[+] Install dependencies\n"
@@ -60,6 +58,9 @@ steps:
 
       echo -e "\n[+] Build web app\n"
       npm run build
+
+      echo -e "\n[+] Copy web app to  native platforms\n"
+      npx cap sync
 
     displayName: Install plugin dependencies
   
