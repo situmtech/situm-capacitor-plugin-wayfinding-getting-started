@@ -53,9 +53,12 @@ steps:
 
           echo -e "\n[+] Set up fastlane instructions"
           cd ..
-          cp -r fastlane angular/ios/
+          cp -r fastlane angular/ios/App
 
-          cd angular/ios
+          cd angular/ios/App
+
+          echo -e "\n[+] Pod install dependencies\n"
+          pod install
           
           echo -e "\n[+] Build with fastlane\n"
           fastlane ios beta
@@ -107,7 +110,7 @@ steps:
           m365 spo folder add -p $folder/$branchFolder -u $(SharepointUrl) --name $destinationFolder
   
           echo -e "\n[+] Upload APK to $folder/$branchFolder/$destinationFolder\n"
-          cd android/app/build/outputs/apk/debug/
+          cd angular/android/app/build/outputs/apk/debug/
           mv app-debug.apk app-$(pluginVersion)-debug.apk
           m365 spo file add -p app-$(pluginVersion)-debug.apk -u $(SharepointUrl) -f $folder/$branchFolder/$destinationFolder
 
