@@ -15,7 +15,7 @@ variables:
 
 resources:
   repositories:
-  - repository: situm_capacitory_plugin
+  - repository: situm_capacitor_plugin
     type: github
     endpoint: SitumGithub
     name: situmtech/situm-capacitor-plugin-wayfinding
