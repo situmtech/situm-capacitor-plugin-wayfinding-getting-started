@@ -46,7 +46,6 @@ jobs:
       - bash: |
            echo "##vso[task.setvariable variable=XAPIKEY]$(echo $(XAPIKEY_EXAMPLES))"
            echo "##vso[task.setvariable variable=XAPIEMAIL]$(echo $(XAPIEMAIL_EXAMPLES))"
-           echo "##vso[task.setvariable variable=BUILDINGID]$(echo $(BUILDING_ID_EXAMPLES))"
            echo -e "\n[!] I'm a shy step so I don't show any information. You'll see my work in the Configure Credentials step"
         displayName: Configure Automatic run Vars
 
@@ -54,6 +53,7 @@ jobs:
       - bash: |
            echo "##vso[task.setvariable variable=XAPIKEY]$(echo ${{parameters.XAPIKEY}})"
            echo "##vso[task.setvariable variable=XAPIEMAIL]$(echo ${{ parameters.XAPIEMAIL}})"
+           echo "##vso[task.setvariable variable=BUILDINGID]$(echo $(BUILDING_ID_EXAMPLES))"
 
            echo -e "\n[!] I'm a shy step so I don't show any information. You'll see my work in the Configure Credentials step"
         displayName: Configure Manual run Vars
@@ -80,7 +80,6 @@ jobs:
       - bash: |
            echo "##vso[task.setvariable variable=XAPIKEY]$(echo $(XAPIKEY_EXAMPLES))"
            echo "##vso[task.setvariable variable=XAPIEMAIL]$(echo $(XAPIEMAIL_EXAMPLES))"
-           echo "##vso[task.setvariable variable=BUILDINGID]$(echo $(BUILDING_ID_EXAMPLES))"
            echo -e "\n[!] I'm a shy step so I don't show any information. You'll see my work in the Configure Credentials step"
         displayName: Configure Automatic run Vars
 
@@ -88,6 +87,7 @@ jobs:
       - bash: |
            echo "##vso[task.setvariable variable=XAPIKEY]$(echo ${{parameters.XAPIKEY}})"
            echo "##vso[task.setvariable variable=XAPIEMAIL]$(echo ${{ parameters.XAPIEMAIL}})"
+           echo "##vso[task.setvariable variable=BUILDINGID]$(echo $(BUILDING_ID_EXAMPLES))"
 
            echo -e "\n[!] I'm a shy step so I don't show any information. You'll see my work in the Configure Credentials step"
       - template: azure/common-steps.yaml
