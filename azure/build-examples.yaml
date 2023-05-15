@@ -1,0 +1,131 @@
+parameters:
+  - name: system
+    type: string
+
+steps:
+    - ${{ if contains(parameters.system, 'macOS') }}:
+      - task: DownloadSecureFile@1
+        name: api_key
+        inputs:
+          secureFile: api_key.json
+  
+      - task: InstallAppleCertificate@2
+        inputs:
+          certSecureFile: AppleCert23.p12
+          
+      - task: InstallAppleCertificate@2
+        inputs:
+          certSecureFile: DistributorWildcard.p12
+    
+      - task: InstallAppleProvisioningProfile@1
+        inputs:
+          provisioningProfileLocation: 'secureFiles'
+          provProfileSecureFile: Situm_Cordova_SDK_Example.mobileprovision
+          removeProfile: true
+      
+      - task: InstallAppleProvisioningProfile@1
+        inputs:
+          provisioningProfileLocation: 'secureFiles'
+          provProfileSecureFile: DistributorOnline.mobileprovision
+          removeProfile: true
+
+      - bash: |
+          echo -e "\n[+] Selecting the Xcode version $(xcodeVersion)\n"
+  
+          sudo xcode-select -switch $(xcodeVersion)
+  
+          cd situm-capacitor-plugin-wayfinding-getting-started
+          echo -e "\n[+] Add platform iOS\n"
+          npx cap add ios
+
+        displayName: Add platforms
+
+      - bash: |
+
+          export appleDevTeamId=$(appleDevTeamId)
+          export CODE_SIGN_IDENTITY="$(CODE_SIGN_IDENTITY)"
+          export WHATS_NEW="Plugin version: $(pluginVersion) USER:$(XAPIEMAIL) ENV: dashboard.situm.com"
+
+          echo -e "\n[+] Show environment variables:"
+          echo -e "\t[+] Apple Developer Team Id: $appleDevTeamId"
+          echo -e "\t[+] Code Sign Identity: $CODE_SIGN_IDENTITY"
+          echo -e "\t[+] Whats New message: $WHATS_NEW"
+
+
+          sudo xcode-select -switch $(xcodeVersion)
+          cd situm-capacitor-plugin-wayfinding-getting-started/fastlane
+  
+          echo -e "\n[+] Setting Apple connection options"
+  
+          cp $(api_key.secureFilePath) .
+  
+          echo -e "\n[+] Install fastlane \n"
+          gem install fastlane
+
+          echo -e "\n[+] Set up fastlane instructions"
+          cd ..
+          cp -r fastlane platforms/ios/
+
+          cd platforms/ios
+          
+          echo -e "\n[+] Build with fastlane\n"
+          fastlane ios beta
+  
+        displayName: Build iOS
+
+    
+
+    - ${{ if contains(parameters.system, 'ubuntu') }}:
+      - bash: |
+          cd situm-capacitor-plugin-wayfinding-getting-started
+          echo -e "\n[+] Add platform Android\n"
+          npx cap add android
+
+        displayName: Add platforms
+
+      - bash: |
+          cd cordova-sdk-validation
+          echo -e "\n[+] Add platform Android\n"
+          npx cap open android
+        displayName: Build Android App
+
+      - bash: |
+
+          if [[ "$(Build.Reason)" == "Manual" ]];then
+            folder="$(CordovaExample_folder)/Manual"
+          else
+            folder="$(CordovaExample_folder)"
+          fi
+        
+          branchName=$(echo $(Build.SourceBranch)| cut -d "/" -f 3,4 | sed 's/\//_/g')
+          branchFolder="$branchName"
+          destinationFolder="$(pluginVersion)"
+  
+          echo -e "\n[+] Variables to Sharepoint Upload:"
+          echo -e "\t[+] Folder: $folder"
+          echo -e "\t[+] Branch Name: $branchName"
+          echo -e "\t[+] Branch folder: $folder/$branchFolder" 
+          echo -e "\t[+] Destination folder: $folder/$branchFolder/$destinationFolder" 
+          echo -e "\t[+] Plugin Version: $(pluginVersion)"
+
+          cd cordova-sdk-validation
+          echo -e "\n[+] Install $(office365Cli) cli\n"
+  
+          npm i -g $(office365Cli)
+  
+          echo -e "\n[+] Login in Sharepoint \n"
+          m365 login --authType password --userName $(sharepoint_user)  --password $(sharepoint_pass)
+  
+          echo -e "\n[+] Create Branch folder $folder/$branchFolder\n"
+          m365 spo folder add -p $folder -u $(SharepointUrl) --name $branchFolder
+  
+          echo -e "\n[+] Create Destination folder $folder/$branchFolder/$destinationFolder\n"
+          m365 spo folder add -p $folder/$branchFolder -u $(SharepointUrl) --name $destinationFolder
+  
+          echo -e "\n[+] Upload APK to $folder/$branchFolder/$destinationFolder\n"
+          cd platforms/android/app/build/outputs/apk/debug/
+          mv app-debug.apk app-$(pluginVersion)-debug.apk
+          m365 spo file add -p app-$(pluginVersion)-debug.apk -u $(SharepointUrl) -f $folder/$branchFolder/$destinationFolder
+
+        displayName: Upload apk
+
