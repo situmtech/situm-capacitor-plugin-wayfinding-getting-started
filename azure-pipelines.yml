@@ -5,7 +5,7 @@
 
 trigger:
   - master
-  - master-test
+  - feature/*
 
 pr: none
 
