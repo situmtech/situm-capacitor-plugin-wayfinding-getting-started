@@ -5,6 +5,7 @@
 
 trigger:
   - master
+  - master-test
 
 pr: none
 
