@@ -39,6 +39,7 @@ parameters:
 jobs:
   - job: Set_Variables
     steps:
+    - checkout: none
     - ${{ if ne(variables['Build.Reason'],'manual') }}:
       - bash: |
            echo "##vso[task.setvariable variable=XAPIKEY;isOutput=true;]$(echo $(XAPIKEY_EXAMPLES))"
