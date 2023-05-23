@@ -46,6 +46,7 @@ jobs:
            echo "##vso[task.setvariable variable=BUILDINGID;isOutput=true;]$(echo $(BUILDING_ID_EXAMPLES))"
            echo -e "\n[!] I'm a shy step so I don't show any information. You'll see my work in the Configure Credentials step"
         displayName: Configure Automatic run Vars
+        name: setVariable
 
     - ${{ if eq(variables['Build.Reason'],'manual') }}:
       - bash: |
@@ -55,6 +56,7 @@ jobs:
 
            echo -e "\n[!] I'm a shy step so I don't show any information. You'll see my work in the Configure Credentials step"
         displayName: Configure Manual run Vars
+        name: setVariable
 
 
   - job: Android_App
@@ -62,9 +64,9 @@ jobs:
     pool:
       vmImage: $(ubuntuVersion)
     variables:
-      XAPIKEY: $[ dependencies.Set_Variables.outputs['setVariable.XAPIKEY'] ]
-      XAPIEMAIL: $[ dependencies.Set_Variables.outputs['setVariable.XAPIEMAIL'] ]
-      BUILDINGID: $[ dependencies.Set_Variables.outputs['setVariable.BUILDINGID'] ]
+      XAPIKEY: $[ dependencies.Set_Variables.outputs['setVariable.XAPIKEY']]
+      XAPIEMAIL: $[ dependencies.Set_Variables.outputs['setVariable.XAPIEMAIL']]
+      BUILDINGID: $[ dependencies.Set_Variables.outputs['setVariable.BUILDINGID']]
     steps: 
     - template: azure/common-steps.yaml
       parameters:
@@ -81,9 +83,9 @@ jobs:
   - job: iOS_App
     dependsOn: ['Set_Variables']
     variables:
-      XAPIKEY: $[ dependencies.Set_Variables.outputs['setVariable.XAPIKEY'] ]
-      XAPIEMAIL: $[ dependencies.Set_Variables.outputs['setVariable.XAPIEMAIL'] ]
-      BUILDINGID: $[ dependencies.Set_Variables.outputs['setVariable.BUILDINGID'] ]
+      XAPIKEY: $[dependencies.Set_Variables.outputs['setVariable.XAPIKEY']]
+      XAPIEMAIL: $[dependencies.Set_Variables.outputs['setVariable.XAPIEMAIL']]
+      BUILDINGID: $[dependencies.Set_Variables.outputs['setVariable.BUILDINGID']]
     pool:
       vmImage: $(macOSVersion)
 
