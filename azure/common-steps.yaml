@@ -1,0 +1,65 @@
+parameters:
+  - name: system
+    type: string
+  - name: XAPIEMAIL
+    type: string
+  - name: XAPIKEY
+    type: string
+  - name: BUILDINGID
+    type: string
+    
+steps:
+  - checkout: self
+    fetchTags: false
+  - checkout: situm_capacitor_plugin
+    fetchDepth: 1
+    fetchTags: false
+
+  - bash: |
+
+      export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+      cd situm-capacitor-plugin-wayfinding
+
+      pluginVersion=$(grep version package.json | awk -F"\"" '{print $4}')
+      echo "##vso[task.setvariable variable=pluginVersion]$(echo $pluginVersion)"
+
+      cd ../situm-capacitor-plugin-wayfinding-getting-started
+
+      echo -e "\n[+] Variables to set:"
+      echo -e "\t[+] Plugin Version used: $pluginVersion"
+      echo -e "\t[+] X-API-EMAIL: ${{ parameters.XAPIEMAIL }}"
+      echo -e "\t[+] BUILDINGID: ${{ parameters.BUILDINGID }}"
+
+
+      sed 's/YOUR_SITUM_USER/${{ parameters.XAPIEMAIL}}/g' -i angular/src/app.constants.json
+      sed 's/YOUR_SITUM_APIKEY/${{ parameters.XAPIKEY }}/g' -i angular/src/app.constants.json
+      sed 's/YOUR_IOS_GOOGLE_MAPS_APIKEY/$(MAPS_APIKEY_EXAMPLE)/g' -i angular/src/app.constants.json
+      sed 's/YOUR_BUILDING_ID/${{ parameters.BUILDINGID }}/g' -i angular/src/app.constants.json
+
+      sed 's/YOUR_ANDROID_GOOGLE_MAPS_APIKEY/$(MAPS_APIKEY_EXAMPLE)/g' -i angular/android/app/src/main/AndroidManifest.xml
+
+
+    displayName: Configure credentials
+ 
+
+
+  - task: NodeTool@0
+    inputs:
+      versionSource: 'spec' # 'spec' | 'fromFile'. Required. Source of version. Default: spec.
+      versionSpec: '14'
+ 
+  - bash: |
+
+      cd situm-capacitor-plugin-wayfinding-getting-started/angular
+
+      echo -e "\n[+] Install dependencies\n"
+      npm install
+
+      echo -e "\n[+] Build web app\n"
+      npm run build
+
+      echo -e "\n[+] Copy web app to  native platforms\n"
+      npx cap sync
+
+    displayName: Install plugin dependencies
+  
