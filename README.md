@@ -1,5 +1,9 @@
 # situm-capacitor-plugin-wayfinding-getting-started
 
+> [!IMPORTANT]  
+> This guide refers to the old version of the Wayfinding module, which is **no longer maintained**. We strongly recommend adopting [MapView](https://developers.situm.com/sdk_documentation/cordova/jsdoc/latest/mapview), the new visual component available at [@situm/cordova](https://github.com/situmtech/cordova) for both Cordova and Capacitor.
+To stay up to date, checkout the [Cordova SDK Changelog](https://situm.com/docs/cordova-sdk-changelog/) and the [example app](https://github.com/situmtech/cordova/tree/master/example) at the public repository.
+
 This sample application has been designed to test [Situm Wayfinding Module for Capacitor](https://github.com/situmtech/situm-capacitor-plugin-wayfinding). Situm Wayfinding Module for Capacitor has been designed to create indoor location applications in the simplest way, using Capacitor. It has been built in the top of the Situm SDK and its functionalities has been widely tested. If you are interested in building applications using the Situm SDK, please refer to [Situm Android SDK Sample app](https://github.com/situmtech/situm-android-getting-started).
 
 With this application you can:
